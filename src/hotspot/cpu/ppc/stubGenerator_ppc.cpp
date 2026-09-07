@@ -567,7 +567,7 @@ class StubGenerator: public StubCodeGenerator {
   //
   //
   address generate_ghash_processBlocks() {
-    StubId stub_id = StubId::stubgen_ghash_processBlocks_id;
+    StubGenStubId stub_id = StubGenStubId::ghash_processBlocks_id;
     StubCodeMark mark(this, stub_id);
     address start = __ function_entry();
 
@@ -3514,7 +3514,7 @@ class StubGenerator: public StubCodeGenerator {
 
   address generate_floatToFloat16() {
     __ align(CodeEntryAlignment);
-    StubId stub_id = StubId::stubgen_f2hf_id;
+    StubGenStubId stub_id = StubGenStubId::f2hf_id;
     StubCodeMark mark(this, stub_id);
     address start = __ function_entry();
     __ f2hf(R3_RET, F1_ARG1, F0);
@@ -3524,7 +3524,7 @@ class StubGenerator: public StubCodeGenerator {
 
   address generate_float16ToFloat() {
     __ align(CodeEntryAlignment);
-    StubId stub_id = StubId::stubgen_hf2f_id;
+    StubGenStubId stub_id = StubGenStubId::hf2f_id;
     StubCodeMark mark(this, stub_id);
     address start = __ function_entry();
     __ hf2f(F1_RET, R3_ARG1);
